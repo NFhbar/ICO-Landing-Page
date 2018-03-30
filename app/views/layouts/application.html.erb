@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/meta_app' %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+    <!-- Wrapper-->
+    <div id="wrapper">
+
+
+
+      <!-- Navigation -->
+      <%= render 'layouts/navigation' %>
+
+      <!-- Page wraper -->
+      <div id="page-wrapper" class="gray-bg">
+
+          <!-- Page wrapper -->
+          <%= render 'layouts/topnavbar' %>
+
+          <!-- Devise Flash Messages -->
+          <%= render 'layouts/messages' %>
+
+          <!-- Main view  -->
+          <%= yield %>
+
+          <!-- Footer (OFF to see debug)-->
+          <!-- <%= render 'layouts/footer' %> -->
+          <%= debug(params) if Rails.env.development? %>
+
+      </div><!-- End page wrapper-->
+    </div><!-- End wrapper-->
+
+    <%= yield :javascript %>
+
+  </body>
+</html>

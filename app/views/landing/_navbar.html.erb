@@ -1,0 +1,38 @@
+<!-- navbar -->
+<div class="navbar-wrapper">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <% if user_signed_in? %>
+              <%= link_to "My Dashboard", "#",
+              class: "navbar-brand" %>
+            <% else %>
+              <%= link_to image_tag("logos/logowhite.png", alt: "logo"), root_path, class: 'navbar-brand' %>
+            <% end %>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="page-scroll" href="#page-top">HOME</a></li>
+          <li><a class="page-scroll" href="#whatisbig">WHAT IS OSHIE?</a></li>
+          <li><a class="page-scroll" href="#team">TEAM</a></li>
+          <li><a class="page-scroll" href="#tokensale">TOKENSALE</a></li>
+          <% if user_signed_in? %>
+             <li><%= link_to "My Dashboard", "#"%></li>
+             <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+           <% else %>
+             <li><%= link_to "Log in", "#" %></li>
+             <li><%= link_to "Sign up", "#" %></li>
+           <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div><!-- navbar-wrapper -->

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= render 'layouts/meta' %>
+    <title><%= full_title(yield(:title)) %></title>
+
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/shim' %>
+
+</head>
+<body class = "white-bg">
+    <%= render :partial => 'policy/navbar' %>
+
+    <!-- Main view  -->
+    <%= render :partial => 'policy/sidebar' %>
+
+    <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
+
+    <!-- Include javascript per-view -->
+    <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
+    <%= yield :javascript %>
+
+</body>
+</html>

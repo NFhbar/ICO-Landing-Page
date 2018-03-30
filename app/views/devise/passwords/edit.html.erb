@@ -1,0 +1,46 @@
+<% provide(:title, "Change my password") %>
+
+<!-- _logo -->
+<%= render :partial => 'devise/shared/logo' %>
+
+<div class="passwordBox animated fadeInDown ">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <center><h3>Change my password</h3><center>
+        </div>
+        <div class="ibox-content">
+
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+          <%= f.hidden_field :reset_password_token %>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "off",
+               class: 'form-control', id: 'Password', placeholder: 'New password'%>
+               <div class="progress">
+                 <div id="StrengthProgressBar" class="progress-bar"></div>
+               </div>
+            </div>
+
+            <!-- PASSWORD CONFIRMATION -->
+            <div class="form-group">
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+               class: 'form-control', placeholder: 'New password confirmation'%>
+            </div>
+
+            <!-- SUBMIT FORM -->
+            <%= f.submit "Change my password",
+            class: "btn btn-primary block full-width m-b" %>
+          <% end %>
+        </div><!-- ibox content-->
+      </div><!-- ibox -->
+      <%= render :partial => 'devise/shared/copyright' %>
+    </div><!-- col-->
+  </div><!-- row-->
+</div>

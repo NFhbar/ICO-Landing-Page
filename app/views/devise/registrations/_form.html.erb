@@ -1,0 +1,59 @@
+<!-- form_for -->
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <!-- FIRST NAME -->
+  <div class="form-group" id="form-inputs">
+    <%= f.text_field :first_name, autofocus: true, class: 'form-control ',
+    placeholder: 'First name'%>
+  </div>
+
+  <!-- LAST NAME -->
+  <div class="form-group" id="form-inputs">
+    <%= f.text_field :last_name, class: 'form-control',
+    placeholder: 'Last name'%>
+  </div>
+
+  <!-- COMPANY NAME -->
+  <div class="form-group" id="form-inputs">
+    <%= f.text_field :company_name, class: 'form-control ',
+    placeholder: 'Company/Institution name (optional)'%>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="form-group" id="form-inputs">
+    <%= f.email_field :email, class: 'form-control',
+    placeholder: 'Email' %>
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="form-group" id="form-inputs">
+    <%= f.password_field :password, autocomplete: "off",
+    class: 'form-control', id: 'Password', placeholder: 'Password' %>
+    <% if @validatable %>
+      <span class="help-block"><%= @minimum_password_length %>
+      characters minimum</span>
+    <% end %>
+    <div class="progress">
+      <div id="StrengthProgressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- PASSWORD CONFIRMATION -->
+  <div class="form-group" id="form-inputs">
+    <%= f.password_field :password_confirmation, autocomplete: "off",
+    class: 'form-control estimate-password', placeholder: 'Password confirmation' %>
+  </div>
+
+  <!-- TERMS -->
+  <%= content_for :terms %>
+
+  <!-- SUBMIT FORM -->
+  <%= f.submit yield(:btn_text),
+  class: "btn btn-primary block full-width m-b", id: "register-btn"%>
+
+<% end %><!-- form_for -->
+<div class= "ibox-title no-borders">
+  <p class="text-muted text-center">Already have an account?</p>
+  <center><%= render "devise/shared/links" %><center>
+</div>

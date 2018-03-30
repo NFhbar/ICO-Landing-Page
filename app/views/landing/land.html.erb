@@ -1,0 +1,590 @@
+<% provide(:title, "Home") %>
+
+<!-- carousel -->
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+    <li data-target="#inSlider" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <div class="container">
+            <div class="carousel-caption">
+              <h1>Claim your Tokens<br/>
+                  The blockchain platform for <br/>
+                  everyone to get tokens.</h1>
+                <p><%= link_to "Learn more", "#whatisbig",
+                class: "btn btn-lg btn-primary" %></p>
+            </div>
+
+            <!-- <div class="carousel-image animated zoomIn">
+                <img src="<%= image_path('landing/laptop5.png') %>" alt="laptop"/>
+            </div> -->
+
+        </div>
+        <!-- Set background for slide in css -->
+        <div class="header-back one">
+        </div>
+    </div>
+    <div class="item">
+        <div class="container">
+            <div class="carousel-caption blank">
+                <h1>As user you are blockchain<br/>
+                 that generates billions in revenue -
+                 access your fortune!</h1>
+                <p><%= link_to "Learn more", '#',
+                class: "btn btn-lg btn-primary" %></p>
+            </div>
+        </div>
+        <!-- Set background for slide in css -->
+        <div class="header-back two"></div>
+    </div>
+  </div>
+  <!-- <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+
+<!-- flash messages -->
+<%= render 'layouts/messages' %>
+
+<!-- countdown -->
+<%= render 'countdown' %>
+
+<!-- what is BIG -->
+<section id="whatisbig" class="container features">
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <div class="primary-line"></div>
+          <br/>
+          <br/>
+          <h1>OSHIE is a comprehensive solution to current challenges in the consumer data ecosystem.<br/>
+            <span class="primary"> Blockchain super solution.
+            </span> </h1>
+            <br/>
+            <br/>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 text-center wow fadeInLeft">
+        <div>
+            <i class="fa fa-users features-icon"></i>
+            <h2>Full consumer power</h2>
+            <p>Your access blockchain is
+            guaranteed through your token!</p>
+        </div>
+        <div class="m-t-lg">
+            <i class="fa fa-check-circle features-icon"></i>
+            <h2>Authenticated and verified data</h2>
+            <p>Verify your data and know
+              exactly and get your rewards.</p>
+        </div>
+    </div>
+    <div class="col-md-4 text-center wow zoomIn">
+        <img src="<%= image_path('landing/perspective.png') %>"
+        alt="dashboard" class="img-responsive" id="home-screen-2">
+    </div>
+    <div class="col-md-4 text-center wow fadeInRight">
+        <div>
+            <i class="fa fa-dollar features-icon"></i>
+            <h2>Rewards for consumers</h2>
+            <p>Earn tokens when you sign up
+              for OSHIE.</p>
+        </div>
+        <div class="m-t-lg">
+            <i class="fa fa-database features-icon"></i>
+            <h2>Your data in the Ethereum blockchain</h2>
+            <p>Access your data in the Ethereum blockchain.</p>
+        </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <div class="primary-line"></div>
+          <h1>Join the OSHIE Beta Waitlist</h1>
+          <% if user_signed_in? %>
+          <%= link_to "My Dashboard", '#',
+          class: "btn btn-primary" %>
+          <% else %>
+          <%= link_to "Sign up!", "#",
+          class: "btn btn-success btn-lg" %>
+          <% end %>
+      </div>
+  </div>
+</section> <!-- what is oshie -->
+
+<!-- what is OSHIE / problem we sove -->
+<section class="features gray-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+            <br/>
+            <br/>
+            <div class="primary-line"></div>
+            <h1>The problem we solve</h1>
+            <br/>
+            <img src="<%= image_path('logos/logo.png') %>"
+            class="img-responsive center-block" alt="dashboard">
+          </div>
+      </div>
+      <div class="row features-block">
+            <!-- zoomIn not working -->
+            <div class="col-lg-6 features-text text-left wow fadeInRight">
+                <h2>OSHIE's Solution</h2>
+                <p>The OSHIE platform, built on the blockchain by Super Company,
+                  is a consumer data and distribution system. With years
+                  of experience in consumer marketing, our team has experienced first
+                  hand the challenges of working with blockchain powers.
+                  </p>
+                  <%= link_to "WHITEPAPER", "#",
+                  class: "btn btn-white btn-lg" %>
+            </div>
+          <div class="col-lg-6 text-center wow zoomIn">
+              <img src="<%= image_path('landing/dashboard.png') %>"
+              class="img-responsive center-block" alt="dashboard">
+          </div>
+      </div>
+  </div>
+  <!-- timeline -->
+  <section class="timeline gray-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="navy-line"></div>
+              <h1>Roadmap and Development</h1>
+          </div>
+      </div>
+      <div class="row features-block">
+
+          <div class="col-lg-12">
+              <div id="vertical-timeline" class="vertical-container light-timeline center-orientation">
+                  <div class="vertical-timeline-block">
+                      <div class="vertical-timeline-icon navy-bg">
+                          <i class="fa fa-cogs"></i>
+                      </div>
+
+                      <div class="vertical-timeline-content">
+                          <h2>Alpha Release</h2>
+                          <p>Private Alpha release.
+                          </p>
+                          <a href="#" class="btn btn-xs btn-primary"> More info</a>
+                          <span class="vertical-date"> Q2 2018 <br/> <small>June</small> </span>
+                      </div>
+                  </div>
+
+                  <div class="vertical-timeline-block">
+                      <div class="vertical-timeline-icon navy-bg">
+                          <i class="fa fa-file-text"></i>
+                      </div>
+
+                      <div class="vertical-timeline-content">
+                          <h2>Beta Release</h2>
+                          <p>Open Beta release.</p>
+                          <a href="#" class="btn btn-xs btn-primary"> More info</a>
+                          <span class="vertical-date"> Q3 2018 <br/> <small>September</small> </span>
+                      </div>
+                  </div>
+
+                  <div class="vertical-timeline-block">
+                      <div class="vertical-timeline-icon navy-bg">
+                          <i class="fa fa-cogs"></i>
+                      </div>
+
+                      <div class="vertical-timeline-content">
+                          <h2>Production Release</h2>
+                          <p>Full release of production build of OSHIE App. </p>
+                          <a href="#" class="btn btn-xs btn-primary"> More info</a>
+                          <span class="vertical-date"> Q4 2018 <br/> <small>December</small> </span>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+</section><!-- timeline -->
+</section><!-- app -->
+
+<!-- team -->
+<section id="team" class="team">
+<div class="container">
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+            <div class="navy-line"></div>
+            <h1>Our Core Team</h1>
+            <p>As a team, we have implemented successful projects within
+              a variety of fields, from startups to large corporations.
+              Together, we form a strong and talented team, capable of developing
+              and implementing complex, scalable products in short
+              periods of time.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 wow fadeInLeft">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Mister</span> Plop</h4>
+                <p>Co-Founder - CEO, OSHIE </p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="team-member wow zoomIn">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Mega</span> Tron</h4>
+                <p>Co-Founder - COO</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4 wow fadeInRight">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Erwin</span> Schrodinger</h4>
+                <p>CTO</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-sm-4 wow fadeInLeft">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Vitalik</span> Buterin</h4>
+                <p>Title </p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="team-member wow zoomIn">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Satoshi</span> Nakamoto</h4>
+                <p>Title</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4 wow fadeInRight">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Lord</span> Mittens</h4>
+                <p>Title</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-sm-4 wow fadeInLeft">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Nicolas</span> Frega</h4>
+                <p>Title </p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="team-member wow zoomIn">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">Michael</span> Jordan</h4>
+                <p>Title</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4 wow fadeInRight">
+            <div class="team-member">
+              <img src="<%= image_path('landing/cat.jpg') %>" class="img-responsive img-circle img-small" alt="">
+                <h4><span class="navy">More</span> People</h4>
+                <p>Title</p>
+                <ul class="list-inline social-icon">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+          <div class="navy-line"></div>
+          <h1>Our Advisers</h1>
+          Some super cool advisers!
+        </div>
+    </div>
+</div>
+</section> <!-- team -->
+
+<!-- token sale -->
+<section id="tokensale" class="features gray-section">
+  <div class="container">
+    <br>
+    <br>
+    <h1><strong>Token sale details</strong></h1>
+      <div class="row m-b-lg">
+          <div class="col-lg-6 text-left">
+              <div class="primary-line"></div>
+              <br>
+              <br>
+              <p><h2>Total token supply</h2></p>
+              <p><h2><strong>113,400,000 OSH</strong></h2></p>
+              <br>
+              <br>
+              <p><h2>Total OSH to be sold</h2></p>
+              <p><h2><strong>81,000,000 (71.4%)</strong></h2></p>
+              <br>
+              <br>
+              <p><h2><span class="navy">20% bonus for presale participants</span></h2></p>
+          </div>
+          <div class="col-lg-6 text-left">
+              <div class="primary-line"></div>
+              <br>
+              <br>
+              <p><h2>Presale Target</h2></p>
+              <p><h2><strong>1,500 ETH</strong></h2></p>
+              <br>
+              <br>
+              <p><h2>Crowdsale Target</h2></p>
+              <p><h2><strong>28,500 ETH</strong></h2></p>
+          </div>
+        </div>
+
+        <div class="row m-b-lg">
+          <br>
+          <br>
+        <div class="col-lg-6 text-center">
+          <div>
+            <h1>Token Distribution (%)</h1>
+            <canvas id="tokenDistribution" height="140"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div>
+            <h1>Use of Funds (%)</h1>
+            <canvas id="fundsDistribution" height="140"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row m-b-lg">
+        <br>
+        <br>
+        <h1><strong>How to participate?</strong></h1>
+      <div class="col-lg-6 text-left">
+        <p><h2>Presale whitelisting starts on<h2></p>
+        <p><h1><span class="navy">Date to be Determined</span></h1></p>
+        <%= link_to "Register", "#",
+        class: "btn btn-success btn-lg" %>
+      </div>
+      <div class="col-lg-6 text-left">
+        <p><h2>OSHIE presale starts on<h2></p>
+        <p><h1><span class="navy">Date to be Determined</span></h1></p>
+        <div class="input-group">
+          <input type="text" placeholder="my email" class="input-md form-control">
+          <span class="input-group-btn">
+            <%= link_to "Sign me up!", '#',
+            class: "btn btn-success" %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- token sale -->
+
+<!-- learn more -->
+<section id="learn" class="container contact">
+  <div class="container">
+      <div class="row m-b-lg">
+          <div class="col-lg-12 text-center">
+              <div class="primary-line"></div>
+              <h1>Want to learn more about OSHIE?</h1>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+              <ul class="list-inline">
+                  <li><div><i class="fa fa-telegram features-icon"></i></div></li>
+                  <li><div><i class="fa fa-medium features-icon"></i></div></li>
+                  <li><div><i class="fa fa-facebook features-icon"></i></div></li>
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+              <ul class="list-inline">
+                  <li><div><i class="fa fa-twitter features-icon"></i></div></li>
+                  <li><div><i class="fa fa-reddit features-icon"></i></div></li>
+                  <li><div><i class="fa fa-envelope features-icon"></i></div></li>
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+              <p><strong>&copy; 2017 OSHIE</strong><br/></p>
+              <ul class="list-inline">
+                  <li><%= link_to "Terms of Use", policy_terms_path %></li>
+                  <li><%= link_to "Privacy Policy", policy_privacy_path %></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section><!-- learn more -->
+
+
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+
+
+$(function() {
+
+    $('body').addClass('landing-page');
+    $('body').attr('id', 'page-top');
+
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 80
+    });
+
+    var tokenData = {
+        labels: ["Development","Marketing & Sales","Business Development", "Operations" ],
+        datasets: [{
+            data: [40,25,20, 15],
+            backgroundColor: ["#1b96fe","#1c84c6","#c2c2c2", "#a3e1d4"]
+        }]
+    } ;
+
+    var fundsData = {
+        labels: ["Token sale participants","Team and advisers","Token store reserve", "Bonus allocations" ],
+        datasets: [{
+            data: [71.4,14.3,10, 4.3],
+            backgroundColor: ["#1b96fe","#1c84c6","#c2c2c2", "#a3e1d4"]
+        }]
+    } ;
+
+    var tokenOptions = {
+        responsive: true
+    };
+
+    var fundsOptions = {
+      responsive: true
+    };
+
+    var fundsChart = document.getElementById("fundsDistribution").getContext("2d");
+    var tokenChart = document.getElementById("tokenDistribution").getContext("2d");
+    new Chart(tokenChart, {type: 'doughnut', data: tokenData, options:tokenOptions});
+    new Chart(fundsChart, {type: 'doughnut', data: fundsData, options:fundsOptions});
+
+    // Page scrolling feature
+    $('a.page-scroll').bind('click', function(event) {
+        var link = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(link.attr('href')).offset().top - 50
+        }, 500);
+        event.preventDefault();
+        $("#navbar").collapse('hide');
+    });
+
+    var cbpanimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+});
+
+new WOW().init();
+
+</script>
+
+<% end %>

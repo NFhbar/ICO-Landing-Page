@@ -1,0 +1,28 @@
+<!-- SIDEBAR FOR LEGAL AND POLICIES PAGES: -->
+<!-- controller: policy -->
+<!--    promise.html.erb -->
+<!--    privacy.html.erb -->
+<!--    acceptable.html.erb -->
+<!--    support.html.erb -->
+<!--    terms.html.erb -->
+<!--    security.html.erb -->
+<!--    trademark.html.erb -->
+<!--    dmca.html.erb -->
+<!-- link_to_in_li defined in app/helpers/application_helper.rb -->
+
+<div class="col-sm-3" id="sidebar-leftCol">
+  <ul class="nav nav-stacked" id="sidebar">
+    <li id="sidebar-title"><h3>Policies</h3></li>
+    <li><%= link_to_in_li "User Promises", policy_promise_path %></li>
+    <li><%= link_to_in_li "Privacy Statement", policy_privacy_path %></li>
+    <li><%= link_to_in_li "Acceptable use Policy", policy_aup_path %></li>
+    <li><%= link_to_in_li "Support Policy", policy_support_path %></li>
+  </ul>
+  <ul class="nav nav-stacked" id="sidebar">
+    <li id="sidebar-title"><h3>Legal</h3></li>
+    <li><%= link_to_in_li "Terms of Service", policy_terms_path %></li>
+    <li><%= link_to_in_li "Oshie Security", policy_security_path %></li>
+    <li><%= link_to_in_li "Trademark Usage", policy_trademark_path %></li>
+    <li><%= link_to_in_li "DMCA Notices", policy_dmca_path %></li>
+  </ul>
+</div>

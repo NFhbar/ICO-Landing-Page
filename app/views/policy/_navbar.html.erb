@@ -1,0 +1,38 @@
+<!-- navbar -->
+<div class="navbar-wrapper policy-nav">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <%= link_to "Oshie", '#',
+              class: "navbar-brand" %>
+
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "What is Oshie",
+          root_path(:anchor => "whatisoshie")%></li>
+          <li><%= link_to "App",
+          root_path(:anchor => "app")%></li>
+          <li><%= link_to "Learn More",
+          root_path(:anchor => "learn")%></li>
+           <% if user_signed_in? %>
+              <li><%= link_to "Oshie Dashboard", home_minor_path%></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div><!-- navbar -->

@@ -1,0 +1,45 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <span>
+              <img alt="image" class="img-circle" src="<%= image_url 'profile_small.jpg' %>"/>
+          </span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear">
+              <span class="block m-t-xs">
+                <% if user_signed_in? %>
+                  <strong class="font-bold"><%= current_user.first_name%></strong><br/>
+                  <strong class="text-muted text-xs"><%= current_user.company_name%></strong>
+                <% end %>
+              </span> <span class="text-muted text-xs block">Menu<b class="caret"></b></span>
+            </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+             <li><%= link_to 'Profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          Oshie
+        </div>
+      </li>
+
+      <!-- Home profile -->
+      <li class="<%= 'active' if current_page?('/home/minor') %>">
+        <%= link_to "/home/minor" do %>
+          <i class="fa fa-home"></i> <span class="nav-label">Home</span>
+        <% end %>
+      </li>
+
+      <!-- Landing -->
+      <li>
+        <%= link_to "/home" do %>
+          <i class="fa fa-star"></i> <span class="nav-label">Landing Page</span>
+        <% end %>
+      </li>
+
+    </ul>
+  </div>
+</nav>

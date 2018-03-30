@@ -1,0 +1,47 @@
+<!-- Provide content for title and _form.html.erb -->
+<% provide(:title, 'Sign up') %>
+<% provide(:btn_text, 'CREATE FREE ACCOUNT') %>
+
+<% content_for :terms do %>
+  <p>Signing up means that you have read and agree to the
+     <%= link_to "Terms of Service", policy_terms_path %> and the
+     <%= link_to "Privacy Policy", policy_privacy_path %>.</p>
+<% end %>
+
+<!-- MAIN -->
+<!-- _logo -->
+<%= render :partial => 'devise/shared/logo' %>
+
+<div class="loginColumns">
+  <div class="row">
+    <div class="col-md-6 animated fadeInRight">
+        <h1 class="font-bold text-blue">Register for free!</h1><br>
+        <h3>Free account</h3>
+        <h5>Create your own evaluations, connect to your database and
+          collaborate with other users, for free.</h5><br>
+        <h3>Deploy your tests</h3>
+        <h5>Easily share your tests with other users. Set your assesment
+           parameters to control the way users access your tests.</h5><br>
+        <h3>Start now</h3>
+        <h5>Start creating in minutes. Deliver your tests to anyone,
+          anywhere.</h5><br>
+    </div><!-- col-md-6 -->
+    <div class="col-md-6 animated fadeInLeft">
+
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Create your free account (confirmation email might take a few minutes)</h5>
+        </div>
+
+        <div class="ibox-content">
+          <!-- _form -->
+          <%= render :partial => 'form' %>
+        </div>
+      </div><!-- ibox -->
+    </div><!-- col-md-6 -->
+  </div><!-- row -->
+
+  <div class="row animated fadeInDown">
+    <%= render :partial => 'devise/shared/copyright' %>
+  </div>
+</div>
